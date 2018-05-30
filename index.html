@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto+Slab:700" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="container">
+    <div class="counter">
+        <h1 class="counter_header">It's a commits counter</h1>
+        <div class="information information-danger">
+            <h2 class="information_header">Follow instructions below</h2>
+            <ol class="instruction">
+                <li class="instruction-item">Fill an input with username whose commits should be counted.</li>
+                <li class="instruction-item">Click the button and enjoy the result.</li>
+            </ol>
+        </div>
+        <div class="name-input">
+            <label class="name-input_description">Username: </label>
+            <input class="name-input_input" id="user-input" type="text" />
+        </div>
+        <button class="button button-confirm" id="count-confirm">Count</button>
+        <div class="commits">
+            <div class="commits_description">Conut of Commits</div>
+            <div class="commits_count" id="commit-output">0</div>
+        </div>
+    </div>
+</div>
+<script src="js/script.js"></script>
+</body>
+</html>

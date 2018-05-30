@@ -1,0 +1,27 @@
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Open Sans', sans-serif; }
+
+.container { width: 100%; height: 100vh; position: relative; background-color: #3498db; }
+
+.counter { width: 500px; height: 500px; padding-top: 15px; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); background-color: #ecf0f1; -webkit-box-shadow: 0 0 25px 0 rgba(0,0,0,0.75); -moz-box-shadow: 0 0 25px 0 rgba(0,0,0,0.75); box-shadow: 0 0 25px 0 rgba(0,0,0,0.75); }
+
+.counter_header { text-align: center; font-family: 'Roboto Slab', serif; color: #2c3e50; font-weight: 700; }
+
+.information { width: 320px; margin: 15px auto 0 auto; border: 1px solid black; background-color: white; padding: 10px 0 10px 10px; }
+
+.information-danger { background-color: #f1c40f; border-color: #c0392b; }
+
+.information-danger .information_header { color: #c0392b; }
+
+.instruction { margin-left: 20px; margin-top: 10px; }
+
+.name-input { margin-top: 50px; margin-left: auto; margin-right: auto; width: 300px; }
+
+.name-input_description { display: block;  font-size: 20px; }
+.name-input_input { display: block; width: 300px; height: 30px; font-size: 16px; }
+
+.button { display: block; width: 300px; height: 50px; margin: 15px auto 0 auto; border: 1px solid black; background-color: white; cursor: pointer; font-size: 22px; font-family: 'Roboto Slab', serif; font-weight: 700; }
+.button-confirm { border-color: #2c3e50; background-color: #3498db; }
+
+.commits { width: 100%; margin-top: 20px; font-size: 25px; text-align: center}
+.commits_description { font-weight: bold; }
+.commits_count { font-size: 40px; color: #27ae60; }
