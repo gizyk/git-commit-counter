@@ -23,10 +23,14 @@ function getUserRepos(user, callback) {
     });
 }
 
-function getUserCommitsFromRepo(user, repo, callback) {
-    var url = "repos/"+ user +"/"+ repo +"/commits?per_page=100&author=" + user;
+function getUserCommitsFromRepo(user, repo, page, addValue, callback) {
+    var url = "repos/"+ user +"/"+ repo +"/commits?per_page=100&author=" + user + "&page=" + page;
     get(url, function(data){
-        callback(data);
+        if(data.length >= 100) {
+            getUserCommitsFromRepo(user, repo, page+1, data.length, callback)
+        } else {
+            callback(data.length + addValue);
+        }
     });
 }
 
@@ -36,12 +40,10 @@ function countUserCommits(user, callback) {
     var responses = 0;
     getUserRepos(user, function(data){
         var reposLength = data.length;
-        console.log(data);
         for(var i = 0; i < reposLength; i++) {
-            getUserCommitsFromRepo(user, data[i].name, function(data){
+            getUserCommitsFromRepo(user, data[i].name, 0, 0, function(data){
                 responses++;
-                console.log(data);
-                commits += (data.length ? data.length : 0);
+                commits += (data ? data : 0);
                 if(responses == reposLength) {
                     callback(commits);
                 } 
@@ -68,7 +70,6 @@ confirm.addEventListener("click", function(){
         output.innerText = "Podaj nazwę !";
     } else {
     countUserCommits(input.value, function(data){
-        console.log(data);
         rise(0, data, output);
     });
     }
